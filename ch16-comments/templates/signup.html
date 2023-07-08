@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}Sign Up{% endblock title %}
+{% block content %}
+<h1>Sign Up</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.username|as_crispy_field }}
+  {{ form.email|as_crispy_field }}
+  {{ form.password1|as_crispy_field }}
+  {{ form.password2|as_crispy_field }}
+  {{ form.age|as_crispy_field }}
+  <button class="btn btn-success" style="background: linear-gradient(to right, #FF1493, #FF6384, #FF9F40);" type="submit">Sign Up</button>
+</form>
+{% endblock content %}
